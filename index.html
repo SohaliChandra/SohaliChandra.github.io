@@ -4,250 +4,337 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sohali Chandra — Portfolio</title>
-  <meta name="description" content="Sohali Chandra — Data Science & Engineering Portfolio" />
-  <link rel="icon" href="https://cdn.simpleicons.org/github/ffffff" />
+  <meta name="description" content="Sohali Chandra — Data Science Portfolio: Home, About, Education, Work, Skills, Interests, Certifications, Contact." />
+  <link rel="icon" href="favicon.ico" />
   <style>
     :root{
-      --bg:#0b1220; --card:#0f172a; --text:#e5e7eb; --muted:#94a3b8; --accent:#22c55e; --accent2:#10b981;
-      --ring:rgba(34,197,94,.35); --border:rgba(255,255,255,.08); --shadow:0 12px 32px rgba(0,0,0,.35)
+      --bg:#0b1220; --card:#0f172a; --text:#e5e7eb; --muted:#94a3b8; --accent:#22c55e; --accent-2:#10b981;
+      --ring: rgba(34,197,94,.4); --shadow: 0 12px 30px rgba(0,0,0,.35);
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; color:var(--text); background:var(--bg)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; color:var(--text); background:var(--bg);}
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
-    .container{max-width:1120px; margin:0 auto; padding:0 1rem}
-
-    header{position:sticky; top:0; z-index:40; backdrop-filter:saturate(150%) blur(8px);
-      background:rgba(11,18,32,.75); border-bottom:1px solid var(--border)}
+    .container{max-width:1100px; margin:0 auto; padding:0 1rem}
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px); background:rgba(11,18,32,.72); border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
-    .brand{font-weight:800; font-size:1.6rem; letter-spacing:.2px}
+    .brand{font-weight:800; font-size:1.6rem; letter-spacing:.3px}
     nav a{margin-left:1.2rem; font-weight:700; opacity:.9}
     nav a:hover, nav a.active{opacity:1; color:var(--accent)}
-    .underline{height:2px; width:26px; background:var(--accent); border-radius:2px; margin-top:6px}
-
-    .hero{padding:5rem 0 2.5rem}
-    .kicker{color:var(--muted); font-weight:600; letter-spacing:.06em}
-    h1{font-size:clamp(2.2rem,5vw,3.6rem); line-height:1.08; margin:.35rem 0 1rem}
-    .highlight{background:linear-gradient(120deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .subtitle{font-size:1.15rem; color:var(--muted)}
+    .underline{height:2px; width:22px; background:var(--accent); border-radius:2px; margin-top:4px}
+    .hero{padding:5rem 0 3rem;}
+    .kicker{color:var(--muted); font-weight:600; letter-spacing:.05em}
+    h1{font-size:clamp(2.2rem,5vw,3.5rem); line-height:1.1; margin:.3rem 0 1rem}
+    h2.section-title{font-size:1.7rem; margin:0 0 .4rem}
+    .highlight{background:linear-gradient(120deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .subtitle{font-size:1.25rem; color:var(--muted)}
     .social{display:flex; gap:.6rem; margin-top:1.2rem}
-    .social a{width:38px; height:38px; display:grid; place-items:center; border-radius:999px;
-      border:1px solid var(--border); background:rgba(255,255,255,.03)}
+    .social a{width:38px; height:38px; border-radius:999px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.03)}
     .social a:hover{border-color:var(--accent); box-shadow:0 0 0 3px var(--ring)}
-
     section{padding:3rem 0}
-    .section-title{font-size:1.75rem; margin:0 0 .5rem}
     .section-sub{color:var(--muted); margin-bottom:1.6rem}
     .grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .row{display:grid; gap:1rem; grid-template-columns:repeat(12,1fr)}
-    .col-5{grid-column:span 5} .col-7{grid-column:span 7}
-    @media (max-width:900px){.row{grid-template-columns:1fr}.col-5,.col-7{grid-column:1/-1}}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:1rem; box-shadow:var(--shadow)}
+    .meta{color:var(--muted)}
+    ul{margin:.3rem 0 .6rem 1.1rem}
+    footer{padding:2.5rem 0 3rem; color:var(--muted)}
+    @media (max-width:840px){nav{display:none}}
 
-    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1rem; box-shadow:var(--shadow)}
-    .pill{display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; border-radius:999px;
-      border:1px solid var(--border); background:rgba(255,255,255,.02); font-size:.9rem; color:var(--muted)}
-    .icon{width:22px; height:22px; display:inline-block; vertical-align:-4px}
-
-    .logo-row{display:flex; flex-wrap:wrap; gap:1.25rem; align-items:center}
-    .logo{height:36px}
-    .logo.sm{height:30px}
-    .strip{border-left:4px solid var(--accent); padding-left:.75rem; margin:.25rem 0 .75rem}
-    ul{margin:.35rem 0 .6rem 1.1rem}
-    footer{padding:2.2rem 0 3rem; color:var(--muted); text-align:center}
+    /* NEW: Work timeline & certs grid */
+    .timeline{position:relative; margin-left:1rem; padding-left:1.25rem; border-left:2px solid rgba(255,255,255,.08)}
+    .timeline .item{position:relative; margin:1.25rem 0; padding-left:.25rem}
+    .timeline .item::before{content:""; position:absolute; left:-10.5px; top:.35rem; width:12px; height:12px; border-radius:50%; background:var(--accent)}
+    .role{font-weight:800; font-size:1.05rem}
+    .org{color:var(--muted); font-weight:600}
+    .bullets{margin:.4rem 0 0 1rem}
+    .badge{display:inline-block; padding:.25rem .55rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(255,255,255,.03); color:var(--muted); font-size:.85rem; margin:.25rem .35rem .25rem 0}
+    .cert-grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .cert{display:flex; gap:.75rem; align-items:flex-start}
+    .cert .logo{width:40px; height:40px; border-radius:8px; background:#0b152b; display:grid; place-items:center; border:1px solid rgba(255,255,255,.08)}
+    .cert h4{margin:.15rem 0 0; font-size:1rem}
+    .cert .issuer{color:var(--muted); font-size:.9rem}
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="brand">Sohali Chandra</div>
-    <nav aria-label="Primary">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#interests">Interests</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section id="home" class="hero">
-  <div class="container">
-    <div class="kicker">Portfolio</div>
-    <h1><span class="highlight">Sohali Chandra</span></h1>
-    <p class="subtitle">Data Scientist & Data Enthusiast — focused on ML, NLP, Cloud, and solid software engineering practices. I build reliable, production-ready data products end-to-end.</p>
-    <div class="underline"></div>
-    <div class="social" aria-label="social links">
-      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" title="LinkedIn"><img class="icon" src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn"/></a>
-      <a href="https://github.com/SohaliChandra" target="_blank" title="GitHub"><img class="icon" src="https://cdn.simpleicons.org/github" alt="GitHub"/></a>
-      <a href="mailto:YOUR.EMAIL@example.com" title="Email"><img class="icon" src="https://cdn.simpleicons.org/minutemailer" alt="Email"/></a>
+  <header>
+    <div class="container nav">
+      <div class="brand">Sohali Chandra</div>
+      <nav aria-label="Primary">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#interests">Interests</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">About</h2>
-    <p class="section-sub">A quick introduction to who I am and what I enjoy working on.</p>
+  <!-- Home -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="kicker">London, UK</div>
+      <h1><span class="highlight">Sohali Chandra</span></h1>
+      <p class="subtitle">Data Scientist & Data Enthusiast — focused on ML, NLP, and Cloud. Building practical, reliable data products.</p>
+      <div class="underline"></div>
+      <div class="social" aria-label="social links">
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" title="LinkedIn">in</a>
+        <a href="https://github.com/SohaliChandra" target="_blank" title="GitHub">GH</a>
+        <a href="mailto:YOUR.EMAIL@example.com" title="Email">@</a>
+      </div>
+    </div>
+  </section>
 
-    <div class="row">
-      <div class="col-5">
-        <div class="card" style="padding:0; overflow:hidden">
-          <img src="https://placehold.co/900x1100/0f172a/FFFFFF?text=Your+Photo" alt="Sohali Chandra portrait">
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <p class="section-sub">A quick introduction to who I am and what I work on.</p>
+      <div class="grid">
+        <div class="card">
+          <p>Hi, I’m <strong>Sohali</strong> — an MSc Data Science graduate in London. I enjoy building end-to-end ML systems, from data to deployment, with a focus on clarity and business impact.</p>
+        </div>
+        <div class="card">
+          <strong>Highlights</strong>
+          <ul>
+            <li>Multi-Modal Hate Speech Detection (Text + Image + Audio).</li>
+            <li>360° Business Health Monitoring system (ETL → KPIs → Dashboards).</li>
+            <li>Cross-Team Data Audit & Workflow Optimization.</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="col-7">
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="grid">
         <div class="card">
-          <div class="strip"><strong>Hi, I’m Sohali.</strong></div>
-          <p>I’m an MSc Data Science graduate who enjoys building end-to-end ML systems — from clean data pipelines and robust APIs to intuitive dashboards and monitored deployments. My sweet spot is combining ML, NLP, and cloud engineering to deliver outcomes that are clear, measurable, and reliable.</p>
-          <div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.8rem">
-            <span class="pill"><img class="icon" src="https://cdn.simpleicons.org/python" alt="">Python</span>
-            <span class="pill"><img class="icon" src="https://cdn.simpleicons.org/pytorch" alt="">PyTorch</span>
-            <span class="pill"><img class="icon" src="https://cdn.simpleicons.org/googlecloud" alt="">GCP</span>
-            <span class="pill"><img class="icon" src="https://cdn.simpleicons.org/docker" alt="">Docker</span>
-            <span class="pill"><img class="icon" src="https://cdn.simpleicons.org/githubactions" alt="">CI/CD</span>
+          <h3>MSc Data Science — University of Surrey</h3>
+          <p class="meta">Relevant Coursework:</p>
+          <ul>
+            <li>Information Security Management; Business Analytics; Database Systems</li>
+            <li>Cloud Computing; Natural Language Processing</li>
+            <li>Advanced Challenges in Web Technologies</li>
+            <li>Machine Learning & Data Mining</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>B.E. — Electronics & Communication Engineering (VTU)</h3>
+          <p class="meta">Relevant Coursework:</p>
+          <ul>
+            <li>Information Theory & Coding</li>
+            <li>Operating Systems & System Software</li>
+            <li>Computer Programming</li>
+            <li>Data Structures</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Work Experience -->
+  <section id="work">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-sub">A snapshot of roles where I applied data, software and analytical skills.</p>
+
+      <div class="timeline">
+
+        <div class="item card">
+          <div class="role">Data Engineer</div>
+          <div class="org">EVOASTRA VENTURES PVT LTD · Remote</div>
+          <div class="meta">Sep 2025 – Present</div>
+          <ul class="bullets">
+            <li>Designed and automated data pipelines to improve data accuracy and timeliness.</li>
+            <li>Built reliable ingestion and transformation workflows for analytics and ML use cases.</li>
+          </ul>
+          <div>
+            <span class="badge">Python</span><span class="badge">SQL</span><span class="badge">Data Pipelines</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="education">
-  <div class="container">
-    <h2 class="section-title">Education</h2>
-    <p class="section-sub">Relevant coursework aligned with Data Science and Cybersecurity.</p>
-
-    <div class="grid">
-      <div class="card">
-        <div class="logo-row" style="margin-bottom:.75rem">
-          <img class="logo" src="https://img.icons8.com/?size=100&id=59782&format=png" alt="University icon"/>
-          <strong>MSc Data Science — University of Surrey</strong>
+        <div class="item card">
+          <div class="role">Barista</div>
+          <div class="org">Chasca Ltd · On-site</div>
+          <div class="meta">Nov 2024 – Sep 2025</div>
+          <ul class="bullets">
+            <li>Delivered tailored customer service and fostered repeat visits.</li>
+            <li>Maintained high satisfaction and a welcoming café environment.</li>
+          </ul>
+          <div>
+            <span class="badge">Customer Service</span><span class="badge">Communication</span><span class="badge">Time Management</span>
+          </div>
         </div>
-        <div class="strip"><strong>Relevant Coursework</strong></div>
-        <ul>
-          <li>Information Security Management</li>
-          <li>Business Analytics</li>
-          <li>Database Systems</li>
-          <li>Cloud Computing</li>
-          <li>Natural Language Processing</li>
-          <li>Advanced Challenges in Web Technologies</li>
-          <li>Machine Learning & Data Mining</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="logo-row" style="margin-bottom:.75rem">
-          <img class="logo" src="https://img.icons8.com/?size=100&id=59782&format=png" alt="University icon"/>
-          <strong>B.E. Electronics & Communication — Visvesvaraya Technological University</strong>
+        <div class="item card">
+          <div class="role">Data Scientist Intern</div>
+          <div class="org">EVOASTRA VENTURES PVT LTD · Remote</div>
+          <div class="meta">Nov 2024 – Mar 2025</div>
+          <ul class="bullets">
+            <li>Engineered/automated pipelines; improved data accuracy by 15% and reduced processing time by 60%.</li>
+            <li>Built & queried relational databases; created actionable insights from large datasets.</li>
+            <li>Developed ML workflows (scikit-learn, XGBoost) to improve model performance.</li>
+            <li>Deployed automated reports/dashboards; reduced reporting time by ~40%.</li>
+          </ul>
+          <div>
+            <span class="badge">Python</span><span class="badge">SQL</span><span class="badge">scikit-learn</span><span class="badge">XGBoost</span>
+            <span class="badge">Dashboards</span>
+          </div>
         </div>
-        <div class="strip"><strong>Relevant Coursework</strong></div>
-        <ul>
-          <li>Information Theory & Coding</li>
-          <li>Operating Systems & System Software</li>
-          <li>Computer Programming</li>
-          <li>Data Structures</li>
-        </ul>
+
+        <div class="item card">
+          <div class="role">Trainee — Robotics Division</div>
+          <div class="org">inganam stem center</div>
+          <div class="meta">Oct 2023 – Jul 2024</div>
+          <ul class="bullets">
+            <li>Led 50+ STEM projects; mentored students in programming & data-driven problem solving.</li>
+          </ul>
+          <div>
+            <span class="badge">STEM</span><span class="badge">Mentoring</span><span class="badge">Programming</span>
+          </div>
+        </div>
+
+        <div class="item card">
+          <div class="role">Team Lead — Business Analysis & Operations</div>
+          <div class="org">AV Screen</div>
+          <div class="meta">Feb 2022 – Apr 2023</div>
+          <ul class="bullets">
+            <li>Drove data-informed decisions; improved retention by ~25% through strategy adjustments.</li>
+            <li>Built structured feedback system across teams; improved operational workflows.</li>
+            <li>Mentored team members in data tracking & analysis to enable evidence-based decisions.</li>
+          </ul>
+          <div>
+            <span class="badge">Business Analysis</span><span class="badge">Leadership</span><span class="badge">Operations</span>
+          </div>
+        </div>
+
+        <div class="item card">
+          <div class="role">Event Services Specialist</div>
+          <div class="org">AV Screen</div>
+          <div class="meta">Jan 2021 – Feb 2022</div>
+          <ul class="bullets">
+            <li>Gathered requirements, tracked progress, and aligned projects with stakeholders.</li>
+            <li>Organized data & documentation to streamline processes and team efficiency.</li>
+          </ul>
+          <div>
+            <span class="badge">Coordination</span><span class="badge">Documentation</span><span class="badge">Process Improvement</span>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title">Skills</h2>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-sub">Core tools and technologies I use.</p>
 
-    <div class="card" style="margin-bottom:1rem">
-      <strong>Languages & Databases</strong>
-      <div class="logo-row" style="margin-top:.9rem">
-        <img class="logo" src="https://cdn.simpleicons.org/python/ffffff" alt="Python">
-        <img class="logo" src="https://cdn.simpleicons.org/java/ffffff" alt="Java">
-        <img class="logo" src="https://cdn.simpleicons.org/mysql/ffffff" alt="MySQL">
-        <img class="logo" src="https://cdn.simpleicons.org/postgresql/ffffff" alt="PostgreSQL">
-        <img class="logo" src="https://cdn.simpleicons.org/html5/ffffff" alt="HTML5">
-        <img class="logo" src="https://cdn.simpleicons.org/css3/ffffff" alt="CSS3">
-        <img class="logo" src="https://cdn.simpleicons.org/javascript/ffffff" alt="JavaScript">
+      <div class="grid">
+        <div class="card">
+          <strong>Languages & Databases</strong>
+          <p class="meta">Python, R, SQL, Java, HTML, CSS, MySQL, PostgreSQL</p>
+        </div>
+        <div class="card">
+          <strong>Frameworks</strong>
+          <p class="meta">Django, Node.js, Bootstrap, TensorFlow, PyTorch, OpenCV, scikit-learn,<br/>Spring Boot, Spring MVC, Hibernate, Apache, Maven, Jakarta EE</p>
+        </div>
+        <div class="card">
+          <strong>Cloud & Data</strong>
+          <p class="meta">BigQuery, Cloud Run, Docker, REST APIs</p>
+        </div>
+        <div class="card">
+          <strong>Tools</strong>
+          <p class="meta">Eclipse, IntelliJ IDEA, Git, AWS, Google Cloud, VS Code, Jupyter, Google Colab</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="card" style="margin-bottom:1rem">
-      <strong>Frameworks</strong>
-      <div class="logo-row" style="margin-top:.9rem">
-        <img class="logo sm" src="https://cdn.simpleicons.org/spring/ffffff" alt="Spring">
-        <img class="logo sm" src="https://cdn.simpleicons.org/springboot/ffffff" alt="Spring Boot">
-        <img class="logo sm" src="https://cdn.simpleicons.org/apachetomcat/ffffff" alt="Apache Tomcat">
-        <img class="logo sm" src="https://cdn.simpleicons.org/hibernate/ffffff" alt="Hibernate">
-        <img class="logo sm" src="https://cdn.simpleicons.org/jakartaee/ffffff" alt="Jakarta EE">
-        <img class="logo sm" src="https://cdn.simpleicons.org/gradle/ffffff" alt="Gradle">
-        <img class="logo sm" src="https://cdn.simpleicons.org/apachemaven/ffffff" alt="Maven">
-        <img class="logo sm" src="https://cdn.simpleicons.org/bootstrap/ffffff" alt="Bootstrap">
-        <img class="logo sm" src="https://cdn.simpleicons.org/tensorflow/ffffff" alt="TensorFlow">
-        <img class="logo sm" src="https://cdn.simpleicons.org/pytorch/ffffff" alt="PyTorch">
-        <img class="logo sm" src="https://cdn.simpleicons.org/opencv/ffffff" alt="OpenCV">
-        <img class="logo sm" src="https://cdn.simpleicons.org/scikitlearn/ffffff" alt="scikit-learn">
+  <!-- Interests -->
+  <section id="interests">
+    <div class="container">
+      <h2 class="section-title">Interests</h2>
+      <p class="section-sub">Areas I enjoy exploring and improving.</p>
+      <div class="grid">
+        <div class="card"><strong>Software Engineering</strong></div>
+        <div class="card"><strong>Software Development</strong></div>
+        <div class="card"><strong>Machine Learning</strong></div>
+        <div class="card"><strong>Data Analysis & Visualization</strong></div>
+        <div class="card"><strong>Database Management</strong></div>
+        <div class="card"><strong>Business Analysis & Operations</strong></div>
+        <div class="card"><strong>Cloud Computing</strong></div>
       </div>
     </div>
+  </section>
 
-    <div class="card">
-      <strong>Tools</strong>
-      <div class="logo-row" style="margin-top:.9rem">
-        <img class="logo sm" src="https://cdn.simpleicons.org/eclipseide/ffffff" alt="Eclipse IDE">
-        <img class="logo sm" src="https://cdn.simpleicons.org/intellijidea/ffffff" alt="IntelliJ IDEA">
-        <img class="logo sm" src="https://cdn.simpleicons.org/visualstudiocode/ffffff" alt="VS Code">
-        <img class="logo sm" src="https://cdn.simpleicons.org/git/ffffff" alt="Git">
-        <img class="logo sm" src="https://cdn.simpleicons.org/amazonaws/ffffff" alt="AWS">
-        <img class="logo sm" src="https://cdn.simpleicons.org/googlecloud/ffffff" alt="Google Cloud">
-        <img class="logo sm" src="https://cdn.simpleicons.org/jupyter/ffffff" alt="Jupyter">
-        <img class="logo sm" src="https://cdn.simpleicons.org/googlecolab/ffffff" alt="Google Colab">
-        <img class="logo sm" src="https://cdn.simpleicons.org/docker/ffffff" alt="Docker">
+  <!-- NEW: Certifications -->
+  <section id="certs">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-sub">Selected credentials that reinforce my data & software skillset.</p>
+
+      <div class="cert-grid">
+
+        <div class="card cert">
+          <div class="logo">🎓</div>
+          <div>
+            <h4>Google Data Analytics Professional Certificate</h4>
+            <div class="issuer">Google / Coursera</div>
+            <p class="meta">Data cleaning, analysis, visualization, and stakeholder communication.</p>
+          </div>
+        </div>
+
+        <div class="card cert">
+          <div class="logo">🧩</div>
+          <div>
+            <h4>SQL Programming</h4>
+            <div class="issuer">Credential</div>
+            <p class="meta">Relational modeling, complex queries, joins, window functions, performance.</p>
+          </div>
+        </div>
+
+        <div class="card cert">
+          <div class="logo">☕</div>
+          <div>
+            <h4>Java & J2EE — Software Development</h4>
+            <div class="issuer">Credential</div>
+            <p class="meta">Core Java, OOP, JDBC, RESTful APIs, Spring / J2EE application development.</p>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="interests">
-  <div class="container">
-    <h2 class="section-title">Interests</h2>
-    <p class="section-sub">Areas I enjoy working on and learning about.</p>
-
-    <div class="grid">
-      <div class="card"><strong>Software Engineering</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/code/ffffff" alt=""></div></div>
-      <div class="card"><strong>Software Development</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/lazyvim/ffffff" alt=""></div></div>
-      <div class="card"><strong>Machine Learning</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/keras/ffffff" alt=""></div></div>
-      <div class="card"><strong>Data Analysis & Visualization</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/plotly/ffffff" alt=""></div></div>
-      <div class="card"><strong>Database Management</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/mysql/ffffff" alt=""></div></div>
-      <div class="card"><strong>Business Analysis & Operations</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/briefcase/ffffff" alt=""></div></div>
-      <div class="card"><strong>Cloud Computing</strong><div class="logo-row" style="margin-top:.6rem"><img class="logo sm" src="https://cdn.simpleicons.org/googlecloud/ffffff" alt=""></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact</h2>
-    <div class="grid">
-      <div class="card">
-        <strong>Email</strong>
-        <p><a href="mailto:YOUR.EMAIL@example.com">YOUR.EMAIL@example.com</a></p>
-      </div>
-      <div class="card">
-        <strong>LinkedIn</strong>
-        <p><a target="_blank" href="https://www.linkedin.com/in/YOUR-LINKEDIN">linkedin.com/in/YOUR-LINKEDIN</a></p>
-      </div>
-      <div class="card">
-        <strong>GitHub</strong>
-        <p><a target="_blank" href="https://github.com/SohaliChandra">github.com/SohaliChandra</a></p>
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Open to Data Scientist / Data Engineer / Analyst roles, collaborations, and mentoring.</p>
+      <div class="grid">
+        <div class="card">
+          <p>Email: <a href="mailto:YOUR.EMAIL@example.com">YOUR.EMAIL@example.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">linkedin.com/in/YOUR-LINKEDIN</a></p>
+          <p>GitHub: <a href="https://github.com/SohaliChandra" target="_blank" rel="noopener">github.com/SohaliChandra</a></p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © <span id="year"></span> Sohali Chandra · Built with HTML/CSS · Hosted on GitHub Pages
-</footer>
+  <footer>
+    <div class="container">© <span id="year"></span> Sohali Chandra · Built with HTML/CSS · Hosted on GitHub Pages</div>
+  </footer>
 
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
