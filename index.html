@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sohali Chandra — Portfolio</title>
-<meta name="description" content="Portfolio of Sohali Chandra: projects, experience, skills, certifications, education, and contact." />
+<meta name="description" content="Portfolio of Sohali Chandra: projects, certifications, experience, education, and contact." />
 <link rel="icon" href="favicon.ico" />
 <style>
   :root{
@@ -68,7 +68,7 @@
   .item h3{margin:.05rem 0 .2rem}
   .where{color:var(--muted); font-weight:600; font-size:.95rem}
 
-  /* Skills chips */
+  /* Skills chips (used inside Projects now) */
   .skillset{display:flex; gap:.5rem; flex-wrap:wrap}
   .skill{background:#0f1930; border:1px solid #1a2a45; padding:.45rem .7rem; border-radius:10px; color:#cdd6e6; font-weight:600}
 
@@ -76,7 +76,7 @@
   .card-soft{background:var(--panel); border:1px solid #132038; border-radius:14px; box-shadow:var(--shadow); padding:1rem}
 
   /* Footer */
-  footer{padding:2rem 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
+  footer{padding:2rem 0; text-align:center; color:#9aa4b2; border-top:1px solid var(--line)}
 
   @media (max-width:900px){
     .hero{grid-template-columns:1fr}
@@ -91,10 +91,8 @@
     <div class="space"></div>
     <nav class="nav" id="topnav">
       <a href="#home" class="active">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -135,93 +133,45 @@
   </div>
 </section>
 
-<!-- ABOUT ME -->
-<section id="about">
-  <div class="wrap">
-    <h2 class="title">About Me</h2>
-    <div class="grid">
-      <article class="card" style="padding:1rem">
-        <p>
-          I’m <strong>Sohali</strong> — a Data Scientist who enjoys building end-to-end systems:
-          clean data pipelines, robust APIs, and insightful dashboards. I’m especially interested in
-          <em>machine learning</em>, <em>natural language processing</em>, and <em>cloud engineering</em>,
-          with a focus on shipping practical, reliable solutions.
-        </p>
-        <div class="chips" style="margin-top:.6rem">
-          <span class="chip">Software Engineering</span>
-          <span class="chip">Machine Learning</span>
-          <span class="chip">Data Analysis & Visualization</span>
-          <span class="chip">Database Management</span>
-          <span class="chip">Business Analysis</span>
-          <span class="chip">Cloud Computing</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <div class="wrap">
-    <h2 class="title">Certifications</h2>
-    <div class="grid">
-      <article class="card pad">
-        <h3>Google Data Analytics Professional Certificate</h3>
-        <p class="meta">Data cleaning, analysis, visualization, and stakeholder communication.</p>
-      </article>
-      <article class="card pad">
-        <h3>SQL Programming</h3>
-        <p class="meta">Relational modeling, complex queries, joins, window functions, performance.</p>
-      </article>
-      <article class="card pad">
-        <h3>Java J2EE Software Development</h3>
-        <p class="meta">Core Java, OOP, JDBC, RESTful APIs, Spring/J2EE application development.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="wrap">
-    <h2 class="title">Skills</h2>
-    <div class="skillset">
-      <span class="skill">Python</span>
-      <span class="skill">R</span>
-      <span class="skill">SQL</span>
-      <span class="skill">Pandas</span>
-      <span class="skill">NumPy</span>
-      <span class="skill">scikit-learn</span>
-      <span class="skill">PyTorch</span>
-      <span class="skill">TensorFlow</span>
-      <span class="skill">OpenCV</span>
-      <span class="skill">Spring Boot</span>
-      <span class="skill">Spring MVC</span>
-      <span class="skill">Hibernate</span>
-      <span class="skill">Apache</span>
-      <span class="skill">Maven</span>
-      <span class="skill">Jakarta EE</span>
-      <span class="skill">BigQuery</span>
-      <span class="skill">Cloud Run</span>
-      <span class="skill">Docker</span>
-      <span class="skill">REST APIs</span>
-      <span class="skill">Eclipse</span>
-      <span class="skill">IntelliJ IDEA</span>
-      <span class="skill">Git</span>
-      <span class="skill">AWS</span>
-      <span class="skill">Google Cloud</span>
-      <span class="skill">VS Code</span>
-      <span class="skill">Jupyter</span>
-      <span class="skill">Google Colab</span>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
+<!-- PROJECTS (includes Skills inside) -->
 <section id="projects">
   <div class="wrap">
     <h2 class="title">Projects</h2>
-    <p class="muted" style="margin-bottom:1rem">A few selected works. Each links to code or a live demo.</p>
+    <p class="muted" style="margin-bottom:.75rem">A few selected works. Each links to code or a live demo.</p>
+
+    <!-- Skills embedded here -->
+    <div class="card pad" style="margin-bottom:1rem">
+      <h3 style="margin:.1rem 0 .6rem">Skills</h3>
+      <div class="skillset">
+        <span class="skill">Python</span>
+        <span class="skill">R</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">NumPy</span>
+        <span class="skill">scikit-learn</span>
+        <span class="skill">PyTorch</span>
+        <span class="skill">TensorFlow</span>
+        <span class="skill">OpenCV</span>
+        <span class="skill">Spring Boot</span>
+        <span class="skill">Spring MVC</span>
+        <span class="skill">Hibernate</span>
+        <span class="skill">Apache</span>
+        <span class="skill">Maven</span>
+        <span class="skill">Jakarta EE</span>
+        <span class="skill">BigQuery</span>
+        <span class="skill">Cloud Run</span>
+        <span class="skill">Docker</span>
+        <span class="skill">REST APIs</span>
+        <span class="skill">Eclipse</span>
+        <span class="skill">IntelliJ IDEA</span>
+        <span class="skill">Git</span>
+        <span class="skill">AWS</span>
+        <span class="skill">Google Cloud</span>
+        <span class="skill">VS Code</span>
+        <span class="skill">Jupyter</span>
+        <span class="skill">Google Colab</span>
+      </div>
+    </div>
 
     <div class="grid">
       <article class="card">
@@ -261,6 +211,27 @@
             <a class="btn" href="#" target="_blank">Screens</a>
           </div>
         </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="wrap">
+    <h2 class="title">Certifications</h2>
+    <div class="grid">
+      <article class="card pad">
+        <h3>Google Data Analytics Professional Certificate</h3>
+        <p class="meta">Data cleaning, analysis, visualization, and stakeholder communication.</p>
+      </article>
+      <article class="card pad">
+        <h3>SQL Programming</h3>
+        <p class="meta">Relational modeling, complex queries, joins, window functions, performance.</p>
+      </article>
+      <article class="card pad">
+        <h3>Java J2EE Software Development</h3>
+        <p class="meta">Core Java, OOP, JDBC, RESTful APIs, Spring/J2EE application development.</p>
       </article>
     </div>
   </div>
@@ -339,7 +310,6 @@
 <footer>© <span id="year"></span> Sohali Chandra · Built with HTML/CSS · Hosted on GitHub Pages</footer>
 
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Simple scroll spy for top nav
