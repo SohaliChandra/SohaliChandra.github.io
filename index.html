@@ -21,11 +21,25 @@
   /* Top bar */
   header{position:sticky; top:0; z-index:40; backdrop-filter:blur(8px) saturate(140%);
     background:rgba(11,18,32,.7); border-bottom:1px solid rgba(255,255,255,.06)}
-  .bar{max-width:1140px; margin:0 auto; padding:.8rem 1rem; display:flex; align-items:center; gap:1.2rem}
-  .brand{font-weight:900; letter-spacing:.3px}
+  .bar{max-width:1140px; margin:0 auto; padding:.8rem 1rem; display:flex; align-items:center; gap:1.2rem; flex-wrap:nowrap;}
+  .brand{font-weight:900; letter-spacing:.3px; white-space:nowrap;}
   .space{flex:1}
-  .nav a{padding:.5rem .7rem; border-radius:10px; color:var(--muted); font-weight:700}
+  .nav {
+    display:flex;
+    flex-wrap:nowrap;
+    gap:.5rem;
+    overflow-x:auto;            /* keep all tabs on one line on phones */
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    white-space:nowrap;
+  }
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{flex:0 0 auto; padding:.5rem .7rem; border-radius:10px; color:var(--muted); font-weight:700}
   .nav a:hover,.nav a.active{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#03120e}
+
+  @media (max-width:520px){
+    .nav a{padding:.4rem .55rem; font-size:.95rem; border-radius:8px;}
+  }
 
   /* Hero */
   .hero{max-width:1140px; margin:0 auto; padding:3rem 1rem 2rem; display:grid; gap:1.25rem; grid-template-columns:1.1fr .9fr}
@@ -44,7 +58,7 @@
   .social a:hover{box-shadow:0 0 0 3px rgba(56,249,165,.28)}
 
   /* Sections */
-  section{padding:2.5rem 0; border-top:1px solid var(--line)}
+  section{padding:2.5rem 0; border-top:1px solid var(--line); scroll-margin-top:92px;}
   .wrap{max-width:1140px; margin:0 auto; padding:0 1rem}
   .title{font-size:1.7rem; margin:0 0 .7rem}
   .muted{color:var(--muted)}
@@ -133,7 +147,7 @@
   </div>
 </section>
 
-<!-- PROJECTS (skills below projects) -->
+<!-- PROJECTS + SKILLS -->
 <section id="projects">
   <div class="wrap">
     <h2 class="title">Projects</h2>
@@ -180,7 +194,7 @@
       </article>
     </div>
 
-    <!-- Skills section below projects -->
+    <!-- Skills below -->
     <div class="card pad" style="margin-top:1.5rem">
       <h3 style="margin:.1rem 0 .6rem">Skills</h3>
       <div class="skillset">
@@ -310,15 +324,16 @@
 <footer>© <span id="year"></span> Sohali Chandra · Built with HTML/CSS · Hosted on GitHub Pages</footer>
 
 <script>
+  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Scroll spy
+  // Simple scroll spy to highlight the active tab
   const links = [...document.querySelectorAll('#topnav a')];
-  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href')));
   const spy = () => {
     const y = window.scrollY + 140;
     let active = 0;
-    secs.forEach((s,i) => { if (s && s.offsetTop <= y) active = i; });
+    sections.forEach((s,i) => { if (s.offsetTop <= y) active = i; });
     links.forEach((a,i)=>a.classList.toggle('active', i===active));
   };
   document.addEventListener('scroll', spy, {passive:true});
