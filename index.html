@@ -27,8 +27,8 @@
   .nav a{padding:.5rem .7rem; border-radius:10px; color:var(--muted); font-weight:700}
   .nav a:hover,.nav a.active{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#03120e}
 
-  /* Hero split */
-  .hero{max-width:1140px; margin:0 auto; padding:3rem 1rem 2rem; display:grid; gap:1.25rem; grid-template-columns: 1.1fr .9fr}
+  /* Hero */
+  .hero{max-width:1140px; margin:0 auto; padding:3rem 1rem 2rem; display:grid; gap:1.25rem; grid-template-columns:1.1fr .9fr}
   .hero h1{font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.08; margin:.4rem 0 1rem}
   .highlight{background:linear-gradient(120deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
   .kicker{color:var(--muted); font-weight:700; letter-spacing:.05em}
@@ -60,7 +60,11 @@
   .btn{display:inline-flex; align-items:center; gap:.45rem; padding:.5rem .75rem; border-radius:10px; border:1px solid #1b2a44; background:#0d1830}
   .btn:hover{box-shadow:0 0 0 3px rgba(56,249,165,.16)}
 
-  /* Experience timeline */
+  /* Skills */
+  .skillset{display:flex; gap:.5rem; flex-wrap:wrap}
+  .skill{background:#0f1930; border:1px solid #1a2a45; padding:.45rem .7rem; border-radius:10px; color:#cdd6e6; font-weight:600}
+
+  /* Experience */
   .timeline{position:relative; padding-left:1rem}
   .timeline::before{content:""; position:absolute; left:.35rem; top:.35rem; bottom:.35rem; width:2px; background:#18233a; border-radius:1px}
   .item{position:relative; margin-left:1rem; background:var(--panel); border:1px solid #132038; border-radius:14px; box-shadow:var(--shadow); padding:1rem; margin-bottom:1rem}
@@ -68,15 +72,11 @@
   .item h3{margin:.05rem 0 .2rem}
   .where{color:var(--muted); font-weight:600; font-size:.95rem}
 
-  /* Skills chips (used inside Projects now) */
-  .skillset{display:flex; gap:.5rem; flex-wrap:wrap}
-  .skill{background:#0f1930; border:1px solid #1a2a45; padding:.45rem .7rem; border-radius:10px; color:#cdd6e6; font-weight:600}
-
   /* Contact */
   .card-soft{background:var(--panel); border:1px solid #132038; border-radius:14px; box-shadow:var(--shadow); padding:1rem}
 
   /* Footer */
-  footer{padding:2rem 0; text-align:center; color:#9aa4b2; border-top:1px solid var(--line)}
+  footer{padding:2rem 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
 
   @media (max-width:900px){
     .hero{grid-template-columns:1fr}
@@ -133,45 +133,11 @@
   </div>
 </section>
 
-<!-- PROJECTS (includes Skills inside) -->
+<!-- PROJECTS (skills below projects) -->
 <section id="projects">
   <div class="wrap">
     <h2 class="title">Projects</h2>
     <p class="muted" style="margin-bottom:.75rem">A few selected works. Each links to code or a live demo.</p>
-
-    <!-- Skills embedded here -->
-    <div class="card pad" style="margin-bottom:1rem">
-      <h3 style="margin:.1rem 0 .6rem">Skills</h3>
-      <div class="skillset">
-        <span class="skill">Python</span>
-        <span class="skill">R</span>
-        <span class="skill">SQL</span>
-        <span class="skill">Pandas</span>
-        <span class="skill">NumPy</span>
-        <span class="skill">scikit-learn</span>
-        <span class="skill">PyTorch</span>
-        <span class="skill">TensorFlow</span>
-        <span class="skill">OpenCV</span>
-        <span class="skill">Spring Boot</span>
-        <span class="skill">Spring MVC</span>
-        <span class="skill">Hibernate</span>
-        <span class="skill">Apache</span>
-        <span class="skill">Maven</span>
-        <span class="skill">Jakarta EE</span>
-        <span class="skill">BigQuery</span>
-        <span class="skill">Cloud Run</span>
-        <span class="skill">Docker</span>
-        <span class="skill">REST APIs</span>
-        <span class="skill">Eclipse</span>
-        <span class="skill">IntelliJ IDEA</span>
-        <span class="skill">Git</span>
-        <span class="skill">AWS</span>
-        <span class="skill">Google Cloud</span>
-        <span class="skill">VS Code</span>
-        <span class="skill">Jupyter</span>
-        <span class="skill">Google Colab</span>
-      </div>
-    </div>
 
     <div class="grid">
       <article class="card">
@@ -212,6 +178,40 @@
           </div>
         </div>
       </article>
+    </div>
+
+    <!-- Skills section below projects -->
+    <div class="card pad" style="margin-top:1.5rem">
+      <h3 style="margin:.1rem 0 .6rem">Skills</h3>
+      <div class="skillset">
+        <span class="skill">Python</span>
+        <span class="skill">R</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">NumPy</span>
+        <span class="skill">scikit-learn</span>
+        <span class="skill">PyTorch</span>
+        <span class="skill">TensorFlow</span>
+        <span class="skill">OpenCV</span>
+        <span class="skill">Spring Boot</span>
+        <span class="skill">Spring MVC</span>
+        <span class="skill">Hibernate</span>
+        <span class="skill">Apache</span>
+        <span class="skill">Maven</span>
+        <span class="skill">Jakarta EE</span>
+        <span class="skill">BigQuery</span>
+        <span class="skill">Cloud Run</span>
+        <span class="skill">Docker</span>
+        <span class="skill">REST APIs</span>
+        <span class="skill">Eclipse</span>
+        <span class="skill">IntelliJ IDEA</span>
+        <span class="skill">Git</span>
+        <span class="skill">AWS</span>
+        <span class="skill">Google Cloud</span>
+        <span class="skill">VS Code</span>
+        <span class="skill">Jupyter</span>
+        <span class="skill">Google Colab</span>
+      </div>
     </div>
   </div>
 </section>
@@ -312,7 +312,7 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Simple scroll spy for top nav
+  // Scroll spy
   const links = [...document.querySelectorAll('#topnav a')];
   const secs = links.map(a => document.querySelector(a.getAttribute('href')));
   const spy = () => {
