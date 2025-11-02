@@ -61,17 +61,14 @@
   .btn{display:inline-flex; align-items:center; gap:.45rem; padding:.5rem .75rem; border-radius:10px; border:1px solid #1b2a44; background:#0d1830}
   .btn:hover{box-shadow:0 0 0 3px rgba(56,249,165,.16)}
 
-  /* Grouped skills style */
-  .skills-block{display:grid; gap:.75rem}
-  .skill-row{background:#0d1830; border:1px solid #1a2a45; border-radius:12px; padding:.85rem 1rem}
-  .skill-row strong{font-weight:800}
-  .skill-row .tags{color:var(--ink)}
-  .skill-row .tags span{opacity:.92}
-  .skill-row .tags span+span::before{content:" · "; color:var(--muted)}
-  .skill-row .label{color:var(--ink)}
-  .skill-row .label::after{content:":"; color:var(--ink)}
+  /* Skills as logo rows */
+  .logo-section h4{margin:.2rem 0 .6rem}
+  .logo-row{display:grid; gap:.85rem; grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); align-items:center}
+  .logo{display:flex; align-items:center; justify-content:center; background:#0d1830; border:1px solid #1a2a45; border-radius:12px; padding:.7rem}
+  .logo img{max-height:34px; width:auto; filter:grayscale(.2) contrast(1.05); transition:transform .15s ease, filter .15s ease, opacity .15s ease}
+  .logo:hover img{transform:translateY(-1px); filter:none; opacity:.95}
+
   @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-  @media (max-width:540px){ .skill-row{padding:.8rem .9rem} }
 
   footer{padding:2rem 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
 </style>
@@ -126,7 +123,7 @@
   </div>
 </section>
 
-<!-- PROJECTS (+ Skills inside) -->
+<!-- PROJECTS (+ Skills with logos inside) -->
 <section id="projects">
   <div class="wrap">
     <h2 class="title">Projects</h2>
@@ -173,44 +170,64 @@
       </article>
     </div>
 
-    <!-- SKILLS (grouped, under Projects) -->
+    <!-- SKILLS (logos) -->
     <div class="card pad" style="margin-top:1.5rem">
       <h3>Skills</h3>
-      <div class="skills-block">
-        <div class="skill-row">
-          <strong class="label">Programming & ML</strong>
-          <span class="tags">
-            <span>Python</span><span>R</span><span>SQL</span><span>Pandas</span><span>NumPy</span>
-            <span>Scikit-learn</span><span>PyTorch</span><span>TensorFlow</span>
-          </span>
-        </div>
-        <div class="skill-row">
-          <strong class="label">Data & Cloud</strong>
-          <span class="tags">
-            <span>BigQuery</span><span>Google Cloud</span><span>AWS</span><span>Cloud Run</span>
-            <span>Docker</span><span>ETL Pipelines</span>
-          </span>
-        </div>
-        <div class="skill-row">
-          <strong class="label">Visualization</strong>
-          <span class="tags">
-            <span>Tableau</span><span>Power BI</span><span>Matplotlib</span><span>Seaborn</span>
-            <span>Dashboards</span>
-          </span>
-        </div>
-        <div class="skill-row">
-          <strong class="label">Software Engineering</strong>
-          <span class="tags">
-            <span>REST APIs</span><span>Git</span><span>VS Code</span><span>Jupyter</span><span>IntelliJ IDEA</span>
-          </span>
-        </div>
-        <div class="skill-row">
-          <strong class="label">Web & Java</strong>
-          <span class="tags">
-            <span>Java</span><span>Spring Boot</span><span>Hibernate</span><span>Maven</span><span>Jakarta EE</span>
-          </span>
+
+      <div class="logo-section" style="margin-top:.6rem">
+        <h4>Programming &amp; Analysis</h4>
+        <div class="logo-row">
+          <div class="logo"><img src="assets/skills/python.png" alt="Python"></div>
+          <div class="logo"><img src="assets/skills/java.png" alt="Java"></div>
+          <div class="logo"><img src="assets/skills/r.png" alt="R"></div>
+          <div class="logo"><img src="assets/skills/sql.png" alt="SQL"></div>
+          <div class="logo"><img src="assets/skills/pandas.png" alt="Pandas"></div>
+          <div class="logo"><img src="assets/skills/numpy.png" alt="NumPy"></div>
+          <div class="logo"><img src="assets/skills/sklearn.png" alt="scikit-learn"></div>
+          <div class="logo"><img src="assets/skills/pytorch.png" alt="PyTorch"></div>
+          <div class="logo"><img src="assets/skills/tensorflow.png" alt="TensorFlow"></div>
+          <div class="logo"><img src="assets/skills/opencv.png" alt="OpenCV"></div>
         </div>
       </div>
+
+      <div class="logo-section" style="margin-top:1.1rem">
+        <h4>Data Visualization &amp; BI</h4>
+        <div class="logo-row">
+          <div class="logo"><img src="assets/skills/powerbi.png" alt="Power BI"></div>
+          <div class="logo"><img src="assets/skills/tableau.png" alt="Tableau"></div>
+          <div class="logo"><img src="assets/skills/looker.png" alt="Looker Studio"></div>
+          <div class="logo"><img src="assets/skills/excel.png" alt="Excel"></div>
+          <div class="logo"><img src="assets/skills/sheets.png" alt="Google Sheets"></div>
+        </div>
+      </div>
+
+      <div class="logo-section" style="margin-top:1.1rem">
+        <h4>Cloud &amp; MLOps</h4>
+        <div class="logo-row">
+          <div class="logo"><img src="assets/skills/gcp.png" alt="Google Cloud"></div>
+          <div class="logo"><img src="assets/skills/aws.png" alt="AWS"></div>
+          <div class="logo"><img src="assets/skills/docker.png" alt="Docker"></div>
+          <div class="logo"><img src="assets/skills/git.png" alt="Git"></div>
+          <div class="logo"><img src="assets/skills/vscode.png" alt="VS Code"></div>
+          <div class="logo"><img src="assets/skills/jupyter.png" alt="Jupyter Notebook"></div>
+          <div class="logo"><img src="assets/skills/colab.png" alt="Google Colab"></div>
+          <div class="logo"><img src="assets/skills/eclipse.png" alt="Eclipse"></div>
+          <div class="logo"><img src="assets/skills/intellij.png" alt="IntelliJ IDEA"></div>
+          <div class="logo"><img src="assets/skills/rstudio.png" alt="RStudio"></div>
+        </div>
+      </div>
+
+      <div class="logo-section" style="margin-top:1.1rem">
+        <h4>Databases &amp; Formats</h4>
+        <div class="logo-row">
+          <div class="logo"><img src="assets/skills/mysql.png" alt="MySQL"></div>
+          <div class="logo"><img src="assets/skills/postgresql.png" alt="PostgreSQL"></div>
+          <div class="logo"><img src="assets/skills/csv.png" alt="CSV"></div>
+          <div class="logo"><img src="assets/skills/json.png" alt="JSON"></div>
+          <div class="logo"><img src="assets/skills/xml.png" alt="XML"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
