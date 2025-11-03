@@ -11,7 +11,6 @@
     --bg:#0b1220; --panel:#0e1627; --ink:#e8edf6; --muted:#9aa4b2;
     --accent:#38f9a5; --accent2:#1dd3a6; --line:#1a2336;
     --chip:#0f1a2f; --shadow:0 16px 40px rgba(0,0,0,.35);
-    /* light skill panels */
     --skill-bg:#f7f9ff; --skill-border:#dbe3f5; --skill-text:#0b1220;
   }
   *{box-sizing:border-box}
@@ -20,7 +19,6 @@
   a{color:inherit; text-decoration:none}
   img{max-width:100%; display:block}
 
-  /* Header */
   header{position:sticky; top:0; z-index:40; backdrop-filter:blur(8px) saturate(140%);
     background:rgba(11,18,32,.7); border-bottom:1px solid rgba(255,255,255,.06)}
   .bar{max-width:1140px; margin:0 auto; padding:.8rem 1rem; display:flex; align-items:center; gap:1.2rem; flex-wrap:nowrap;}
@@ -30,15 +28,13 @@
   .nav::-webkit-scrollbar{display:none;}
   .nav a{flex:0 0 auto; padding:.5rem .7rem; border-radius:10px; color:var(--muted); font-weight:700}
   .nav a:hover,.nav a.active{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#03120e}
-  @media (max-width:520px){ .nav a{padding:.4rem .55rem; font-size:.95rem; border-radius:8px;} }
 
-  /* Sections */
   section{padding:2.7rem 0; border-top:1px solid var(--line); scroll-margin-top:92px;}
   .wrap{max-width:1140px; margin:0 auto; padding:0 1rem}
   .title{font-size:1.7rem; margin:0 0 .7rem}
   .muted{color:var(--muted)}
+  .subtitle{margin:1.25rem 0 .5rem; font-size:1.25rem; font-weight:800; color:var(--ink);} /* NEW */
 
-  /* Hero */
   .hero{display:grid; gap:1.25rem; grid-template-columns:1.1fr .9fr}
   .hero h1{font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.08; margin:.4rem 0 1rem}
   .highlight{background:linear-gradient(120deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
@@ -52,7 +48,6 @@
   .social a{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#0d1930;border:1px solid #14243f}
   .social a:hover{box-shadow:0 0 0 3px rgba(56,249,165,.28)}
 
-  /* Cards & grids */
   .card{background:var(--panel); border:1px solid #132038; border-radius:16px; box-shadow:var(--shadow); overflow:hidden}
   .pad{padding:1rem}
   .grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
@@ -63,8 +58,8 @@
   .btn{display:inline-flex; align-items:center; gap:.45rem; padding:.5rem .75rem; border-radius:10px; border:1px solid #1b2a44; background:#0d1830}
   .btn:hover{box-shadow:0 0 0 3px rgba(56,249,165,.16)}
 
-  /* ===== New single-box Skills panels ===== */
-  .skill-panels{display:grid; gap:1rem; margin-top:1.5rem}
+  /* ===== Skills Panels ===== */
+  .skill-panels{display:grid; gap:1rem; margin-top:1rem}
   .skill-panel{
     background:var(--skill-bg);
     border:1px solid var(--skill-border);
@@ -76,9 +71,6 @@
   .logos{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
   .logos img{height:36px; width:auto; object-fit:contain; display:block; transition:transform .15s ease, filter .15s ease; filter:saturate(1)}
   .logos img:hover{transform:translateY(-1px)}
-  @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-  @media (max-width:520px){ .logos img{height:30px} }
-
   footer{padding:2rem 0; text-align:center; color:var(--muted); border-top:1px solid var(--line)}
 </style>
 </head>
@@ -179,6 +171,9 @@
       </article>
     </div>
 
+    <!-- === Added title === -->
+    <h3 class="subtitle">Skills</h3>
+
     <!-- ===== SKILLS (single light box per category) ===== -->
     <div class="skill-panels">
       <div class="skill-panel">
@@ -235,8 +230,6 @@
         </div>
       </div>
     </div>
-    <!-- ===== end Skills ===== -->
-
   </div>
 </section>
 
@@ -281,7 +274,6 @@
 <section id="education">
   <div class="wrap">
     <h2 class="title">Education</h2>
-
     <div class="card pad" style="margin-bottom:1rem">
       <h3>MSc Data Science — University of Surrey</h3>
       <p class="muted"><strong>Relevant Coursework:</strong></p>
@@ -295,7 +287,6 @@
         <li>Machine Learning & Data Mining</li>
       </ul>
     </div>
-
     <div class="card pad">
       <h3>B.E. — Electronics & Communication Engineering, Visvesvaraya Technological University</h3>
       <p class="muted"><strong>Relevant Coursework:</strong></p>
@@ -324,10 +315,7 @@
 <footer>© <span id="year"></span> Sohali Chandra · Built with HTML/CSS · Hosted on GitHub Pages</footer>
 
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Simple scroll spy for top nav
   const links = [...document.querySelectorAll('#topnav a')];
   const sections = links.map(a => document.querySelector(a.getAttribute('href')));
   const spy = () => {
